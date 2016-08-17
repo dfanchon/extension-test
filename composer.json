@@ -2,6 +2,7 @@
   "name": "webtales/ExtensionTest",
   "minimum-stability": "dev",
   "require": {
+    "webtales/alambic-connector-mongodb": "dev-master"
   },
   "type":"library",
   "config": {

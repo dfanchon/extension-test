@@ -1,0 +1,9 @@
+{
+  "name": "webtales/extension-test",
+  "minimum-stability": "dev",
+  "require": {
+  },
+  "type":"library",
+  "config": {
+  }
+}

@@ -1,6 +1,5 @@
 {
   "name": "dfanchon/ExtensionTest",
-  "minimum-stability": "dev",
   "require": {
       "webtales/alambic-connector-mongodb":"@dev",
       "webtales/alambic-connector-firebase":"@dev",

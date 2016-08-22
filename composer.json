@@ -2,21 +2,9 @@
   "name": "dfanchon/ExtensionTest",
   "minimum-stability": "dev",
   "require": {
-      "webtales/alambic-connector-mongodb":"dev-master",
-      "webtales/alambic-connector-firebase":"@dev",
-      "webtales/alambic-redis-cache":"@dev"
+      "webtales/alambic-connector-mongodb":"dev-master"
   },
   "type":"library",
   "config": {
-  },
-  "repositories": [
-    {
-        "type": "vcs",
-        "url": "git://github.com/WebTales/alambic-connector-firebase.git"
-    },
-    {
-        "type": "vcs",
-        "url": "git://github.com/WebTales/alambic-redis-cache.git"
-    }
-  ]
+  }
 }

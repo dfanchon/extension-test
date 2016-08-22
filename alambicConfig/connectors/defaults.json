@@ -1,7 +1,0 @@
-{
-  "MongoDB":{
-    "connectorClass":"AlambicMongodbConnector\\Connector",
-    "prePipeline":[],
-    "postPipeline":[]
-  }
-}

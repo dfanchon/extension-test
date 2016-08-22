@@ -1,0 +1,41 @@
+{
+  "Fpost": {
+    "name" : "Fposts",
+    "description" : "Blog Posts",
+    "fields" : {
+      "id" : {
+        "type" : "String",
+        "required" : true,
+        "description" : "Post Id"
+      },
+      "text" : {
+        "type" : "String",
+        "description" : "Post Text"
+      },
+      "author" : {
+        "type" : "String",
+        "description" : "Author Id"
+      }
+    },
+    "expose" : true,
+    "singleEndpoint" : {
+      "name" : "fpost"
+    },
+    "multiEndpoint" : {
+      "name" : "fposts"
+    },
+    "mutations":{
+      "updateFpost":{
+        "type":"Fpost",
+        "methodName":"update"
+      }
+    },
+    "connector" : {
+      "type" : "firebaseDB",
+      "configs" : {
+        "path": "posts",
+        "cacheTTL": 30
+      }
+    }
+  }
+}

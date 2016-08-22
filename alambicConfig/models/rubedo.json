@@ -1,0 +1,44 @@
+{
+    "ApplicationLog": {
+        "name": "ApplicationLog",
+        "fields": {
+            "_id": {
+                "type": "ID",
+                "name": "_id"
+            },
+            "message": {
+                "type": "String",
+                "name": "message"
+            },
+            "level": {
+                "type": "Int",
+                "name": "level"
+            },
+            "level_name": {
+                "type": "String",
+                "name": "level_name"
+            },
+            "channel": {
+                "type": "String",
+                "name": "channel"
+            },
+            "datetime": {
+                "type": "String",
+                "name": "datetime"
+            }
+        },
+        "expose": true,
+        "singleEndpoint": {
+            "name": "ApplicationLog"
+        },
+        "multiEndpoint": {
+            "name": "ApplicationLogList"
+        },
+        "connector": {
+            "type": "Rubedo",
+            "configs": {
+                "collection": "ApplicationLog"
+            }
+        }
+    }
+}

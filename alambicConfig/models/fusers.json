@@ -1,0 +1,114 @@
+{
+  "fusers": {
+    "name": "Fuser",
+    "description": "Writers",
+    "fields": {
+      "id": {
+        "type": "String",
+        "required": true,
+        "description": "User Id"
+      },
+      "name": {
+        "type": "String",
+        "description": "User Name"
+      },
+      "posts": {
+        "type": "Fpost",
+        "multivalued": true,
+        "args": {
+          "text": {
+            "type": "String"
+          }
+        },
+        "relation": {
+          "author": "id"
+        }
+      }
+    },
+    "expose": true,
+    "singleEndpoint": {
+      "name": "fuser",
+      "args": {
+        "id": {
+          "type": "String",
+          "required": true,
+          "description": "User Id"
+        }
+      }
+    },
+    "multiEndpoint": {
+      "name": "fusers",
+      "args": {
+        "limitToFirst": {
+          "type": "Int",
+          "required": false,
+          "description": "limitToFirst"
+        },
+        "limitToLast": {
+          "type": "Int",
+          "required": false,
+          "description": "limitToLast"
+        },
+        "startAt": {
+          "type": "Int",
+          "required": false,
+          "description": "startAt"
+        },
+        "endAt": {
+          "type": "Int",
+          "required": false,
+          "description": "endAt"
+        },
+        "orderBy": {
+          "type": "Int",
+          "required": false,
+          "description": "orderBy"
+        }
+      }
+    },
+    "mutations":{
+        "createFuser":{
+          "args":{
+            "id": {
+              "type": "String"
+            },
+            "name": {
+              "type": "String"
+            }
+          },
+          "type":"fusers",
+          "methodName":"create"
+      },
+      "updateFuser":{
+        "args":{
+          "id": {
+            "type": "String",
+            "required": true
+          },
+          "name": {
+            "type": "String"
+          }
+        },
+        "type":"fusers",
+        "methodName":"update"
+      },
+      "deleteFuser":{
+        "args":{
+          "id": {
+            "type": "String",
+            "required": true
+          }
+        },
+        "type":"fusers",
+        "methodName":"delete"
+      }
+    },
+    "connector": {
+      "type": "firebaseDB",
+      "configs": {
+        "path": "users",
+        "cacheTTL": 60
+      }
+    }
+  }
+}

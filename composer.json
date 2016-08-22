@@ -1,8 +1,10 @@
 {
-  "name": "webtales/ExtensionTest",
+  "name": "dfanchon/ExtensionTest",
   "minimum-stability": "dev",
   "require": {
-    "webtales/alambic-connector-mongodb": "dev-master"
+      "webtales/alambic-connector-firebase":"dev-master",
+      "webtales/alambic-connector-mongodb":"dev-master",
+      "webtales/alambic-redis-cache":"dev-master"
   },
   "type":"library",
   "config": {

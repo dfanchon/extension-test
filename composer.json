@@ -8,15 +8,5 @@
   },
   "type":"library",
   "config": {
-  },
-  "repositories": [
-    {
-        "type": "vcs",
-        "url": "git://github.com/WebTales/alambic-connector-firebase.git"
-    },
-    {
-        "type": "vcs",
-        "url": "git://github.com/WebTales/alambic-redis-cache.git"
-    }
-  ]
+  }
 }

@@ -1,0 +1,6 @@
+{
+  "Diffbot": {
+    "connectorClass": "AlambicDiffbotConnector\\Connector",
+    "token": "f7381c61f906bba73db8026fc5559d47"
+  }
+}

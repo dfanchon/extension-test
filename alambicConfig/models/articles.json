@@ -1,0 +1,17 @@
+{
+    "Articles": {
+        "name": "Articles",
+        "expose": true,
+        "multiEndpoint": {
+            "name": "articles",
+            "args": {
+              "search": {
+                "type": "String"
+              }
+            }
+        },
+        "connector": {
+            "type": "Diffbot"
+        }
+    }
+}

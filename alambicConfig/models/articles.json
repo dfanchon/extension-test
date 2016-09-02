@@ -2,16 +2,156 @@
     "Articles": {
         "name": "Articles",
         "expose": true,
+        "fields": {
+            "title": {
+              "type": "String"
+            },
+            "text": {
+              "type": "String"
+            },
+            "html": {
+              "type": "String"
+            },
+            "date": {
+              "type": "String"
+            },
+            "estimatedDate": {
+              "type": "String"
+            },
+            "author": {
+              "type": "String"
+            },
+            "authorUrl": {
+              "type": "String"
+            },
+            "discussion": {
+              "type": "String"
+            },
+            "humanLanguage": {
+              "type": "String"
+            },
+            "numPages": {
+              "type": "String"
+            },
+            "nextPages": {
+              "type": "String"
+            },
+            "siteName": {
+              "type": "String"
+            },
+            "pageUrl": {
+              "type": "String"
+            },
+            "resolvedPageUrl": {
+              "type": "String"
+            },
+            "tags": {
+              "type": "Tag",
+              "multivalued": true
+            },
+            "images": {
+              "type": "Image",
+              "multivalued": true
+            },
+            "videos": {
+              "type": "Video",
+              "multivalued": true
+            },
+            "breadcrumb": {
+              "type": "String",
+              "multivalued": true
+            },
+            "diffbotUri": {
+              "type": "String"
+            }
+        },
         "multiEndpoint": {
             "name": "articles",
             "args": {
-              "search": {
-                "type": "String"
+            }
+        },
+        "singleEndpoint": {
+            "name": "article",
+            "args": {
+              "diffbotUri": {
+                "type": "String",
+                "required": true
               }
             }
         },
         "connector": {
-            "type": "Diffbot"
+            "type": "Diffbot",
+            "configs" : {
+                "collection": "NRCO"
+            }
+        }
+    },
+    "Tag": {
+        "name": "Tag",
+        "expose": true,
+        "fields": {
+            "label": {
+                "type": "String"
+            },
+            "count": {
+                "type": "String"
+            },
+            "score": {
+                "type": "String"
+            },
+            "rdfTypes": {
+                "type": "String",
+                "multivalued": true
+            },
+            "uri": {
+                "type": "String"
+            }
+        }
+    },
+    "Image": {
+        "name": "Image",
+        "expose": true,
+        "fields": {
+            "url": {
+                "type": "String"
+            },
+            "title": {
+                "type": "String"
+            },
+            "height": {
+                "type": "String"
+            },
+            "width": {
+                "type": "String"
+            },
+            "naturalHeight": {
+                "type": "String"
+            },
+            "naturalWidth": {
+                "type": "String"
+            },
+            "primary": {
+                "type": "String"
+            }
+        }
+    },
+    "Video": {
+        "name": "Video",
+        "expose": true,
+        "fields": {
+            "url": {
+                "type": "String"
+            },
+            "naturalHeight": {
+                "type": "String"
+            },
+            "naturalWidth": {
+                "type": "String"
+            },
+            "primary": {
+                "type": "String",
+                "multivalued": true
+            }
         }
     }
 }

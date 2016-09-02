@@ -1,6 +1,11 @@
 {
   "Diffbot": {
     "connectorClass": "AlambicDiffbotConnector\\Connector",
-    "token": "f7381c61f906bba73db8026fc5559d47"
+    "token": "f7381c61f906bba73db8026fc5559d47",
+    "prePipeline": ["RedisCache\\RedisCache"],
+    "postPipeline": ["RedisCache\\RedisCache"],
+    "redisCacheHost": "127.0.0.1",
+    "redisCachePort": 6379,
+    "defaultCacheTTL": 3600
   }
 }

@@ -2,6 +2,9 @@
 namespace App\Extensions\ExtensionTest\Controllers;
 use Laravel\Lumen\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
+use Lullabot\AMP\AMP;
+use Lullabot\AMP\Validate\Scope;
+
 class NewsController extends BaseController
 {
     public function index(Request $request)
@@ -22,7 +25,7 @@ class NewsController extends BaseController
     public function ampList2(Request $request)
     {
         $params=$request->input();
-        $requestString = "{articles(limit:50 orderBy:\"date\"){diffbotUri date pageUrl title html author tags{label uri rdfTypes} images{url} videos{url}}}";
+        $requestString = "{articles(limit:80 orderBy:\"date\"){diffbotUri date pageUrl title html author tags{label uri rdfTypes} images{url} videos{url}}}";
         $operationName = isset($params['operation']) ? $params['operation'] : null;
         $variableValues = isset($params['variables']) ? $params['variables'] : null;
         $result=app()['GraphQLHandler']->execute($requestString,$variableValues,$operationName,$params);
@@ -37,8 +40,9 @@ class NewsController extends BaseController
         $variableValues = isset($params['variables']) ? $params['variables'] : null;
         $result=app()['GraphQLHandler']->execute($requestString,$variableValues,$operationName,$params);
         $html = $result['data']['article']['html'];
-        $html = str_replace('<img', '<amp-img layout="fixed"', $html);
-        $result['data']['article']['html'] = $html;
+        $amp = new AMP();
+        $amp->loadHtml($result['data']['article']['html']);
+        $result['data']['article']['html'] = $amp->convertToAmpHtml();
         return view()->make('ampdetail', $result['data']['article']);
     }
 

@@ -74,24 +74,27 @@
 
   </head>
   <body>
-<article id="preview">
-    <div class="heading">
-    <h1>[[ $title ]]</h1>
-    <br>Date: [[ $date ]]<br><br>
-</div>
+    <article id="preview">
+        <div class="heading">
+        <h1>[[ $title ]]</h1>
+    </div>
+    <p>Date: [[ $date ]]</p>
     @if ($tags)
+    <p>
     Tags:
     @foreach ($tags as $tag)
     <a href="[[ $tag['uri'] ]]">[[ $tag['label'] ]]</a>
     @endforeach
-    <br>
+    </p>
     @endif
-    Url: <a href="[[ $pageUrl ]]">[[ $pageUrl ]]</a>
+    <p><a href="[[ $pageUrl ]]">[[ $pageUrl ]]</a></p>
     @if (substr($title,0,5)!='VIDEO')
     {!! $html !!}
     @else
     <br>Video:
-    {!! $videos[0]['url'] !!}
+    @foreach ($videos as $video)
+    {!! $videos['url'] !!}
+    @endforeach
     @endif
 </article>
   </body>

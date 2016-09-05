@@ -74,7 +74,7 @@
   </head>
   <body>
     <h4>Articles</h4>
-    <amp-list width=300 height=500 layout=responsive src="//v4.local/api/news?query={articles(limit:50%20orderBy:%22date%22){diffbotUri%20date%20title%20%20text%20html%20author%20tags{label%20uri%20rdfTypes}%20images{url}%20videos{url}}}">
+    <amp-list width=300 height=500 layout=responsive src="//[[$rootSrc]]/api/news?query={articles(limit:50%20orderBy:%22date%22){diffbotUri%20date%20title%20%20text%20html%20author%20tags{label%20uri%20rdfTypes}%20images{url}%20videos{url}}}">
         <template type="amp-mustache">
               <a class="card related"
                   href=/detail?id={{diffbotUri}}>

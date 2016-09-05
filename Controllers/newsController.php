@@ -17,9 +17,10 @@ class NewsController extends BaseController
         return view()->make('welcome',$result['data']);
     }
 
-    public function ampList()
+    public function ampList(Request $request)
     {
-        return view()->make('amplist');
+        $rootSrc = str_replace('http://', '', $request->root());
+        return view()->make('amplist', ['rootSrc' => $rootSrc]);
     }
 
     public function ampList2(Request $request)

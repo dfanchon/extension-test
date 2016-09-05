@@ -24,6 +24,6 @@ $app->get('/news1', function (Request $request) {
 
 $app->get('/news2', 'App\Extensions\ExtensionTest\Controllers\NewsController@index');
 $app->get('/list', 'App\Extensions\ExtensionTest\Controllers\NewsController@ampList');
-$app->get('/list2', 'App\Extensions\ExtensionTest\Controllers\NewsController@ampList2');
+$app->get('/news', 'App\Extensions\ExtensionTest\Controllers\NewsController@ampList2');
 $app->get('/detail', 'App\Extensions\ExtensionTest\Controllers\NewsController@ampDetail');
 $app->get('/api/news', 'App\Extensions\ExtensionTest\Controllers\GraphQLController@handle');

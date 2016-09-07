@@ -63,6 +63,9 @@
             },
             "diffbotUri": {
               "type": "String"
+            },
+            "timestamp": {
+              "type": "Int"
             }
         },
         "multiEndpoint": {
